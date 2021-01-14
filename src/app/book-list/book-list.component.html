@@ -10,11 +10,13 @@
     <tbody *ngFor="let item of books">
     <tr>
       <td>{{ item.name }}</td>
+
       <td>
         <button type="submit" class="btn btn-success" (click)="update(item.id)">Đã đọc</button>
       </td>
     </tr>
     </tbody>
+
 
     <tr>
       <td colspan="2">
@@ -39,5 +41,5 @@
     </tr>
   </table>
 
-  <a [routerLink]="['/unreadbook-list']">Danh sách đã đọc</a>
+  <a class="btn btn-danger" [routerLink]="['/unreadbook-list']">Danh sách đã đọc</a>
 </div>

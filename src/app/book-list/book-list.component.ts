@@ -13,7 +13,7 @@ export class BookListComponent implements OnInit {
   addBookForm: any;
   editBookForm: any;
   books: Booklist[] = [];
-  book: Booklist;
+  book: Booklist | undefined;
 
 
   constructor(
@@ -26,7 +26,7 @@ export class BookListComponent implements OnInit {
 
   ngOnInit(): void {
     this.addBookForm = this.fb.group({
-      name: ['', [Validators.required]]
+      name: ['', [Validators.required]],
     });
     this.getAll();
   }

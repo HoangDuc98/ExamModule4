@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class UnreadbookListComponent implements OnInit {
   addBookForm: any;
   books: Booklist[] = [];
-  book;
+  book: Booklist | undefined;
 
   constructor(
     private bookService: BookserviceService,
@@ -39,7 +39,7 @@ export class UnreadbookListComponent implements OnInit {
     });
   }
 
-  update(id) {
+  update(id: number) {
     this.bookService.getBookById(id).subscribe(data => {
       this.book = data;
 

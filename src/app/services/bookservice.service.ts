@@ -21,6 +21,10 @@ export class BookserviceService {
     return this.http.post<Booklist>(this.url, book);
   }
 
+  destroy(id: number) {
+    return this.http.delete<Booklist>(this.url + '/delete' + id);
+  }
+
   getBookById(id: number) {
     return this.http.get<Booklist>(this.url + '/' + id);
   }
